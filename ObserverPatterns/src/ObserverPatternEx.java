@@ -5,11 +5,14 @@ public class ObserverPatternEx {
 
     public static void main(String agrs[]){
 
-        System.out.println("***Observer Pattern Demo***\n");
-        Observer oBOne = new Observer();
+        System.out.println("***ObserverOne Pattern Demo***\n");
+        ObserverOne oBOne = new ObserverOne();
+        ObserverTwo oBTwo = new ObserverTwo();
         Subject oSub = new Subject();
-        oSub.register(oBOne);
 
+        oSub.register(oBOne);
+        oSub.register(oBTwo);
+        
         System.out.println("Setting flag = 10");
         oSub.setFlag(10);
 

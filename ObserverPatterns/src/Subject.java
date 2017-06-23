@@ -6,20 +6,20 @@ import java.util.List;
  */
 public class Subject implements ISubject{
 
-    List<Observer> observerList = new ArrayList<>();
+    List<IObserver> observerList = new ArrayList<>();
 
     private int flag;
 
 
     @Override
-    public void register(Observer ob) {
+    public void register(IObserver ob) {
 
         observerList.add(ob);
 
     }
 
     @Override
-    public void unregister(Observer ob) {
+    public void unregister(IObserver ob) {
 
         observerList.remove(ob);
 
@@ -28,9 +28,9 @@ public class Subject implements ISubject{
     @Override
     public void notifyObservers() {
 
-        for(Observer ob : observerList){
+        for(IObserver ob : observerList){
 
-            ob.update();
+            ob.update(this.flag);
 
         }
 
